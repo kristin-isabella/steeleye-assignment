@@ -36,7 +36,7 @@ class S3Uploader:
         self.bucket_name = bucket_name if bucket_name else os.getenv("BUCKET", 'csv-bucket-kristin')
         self.s3_client = boto3.client("s3", aws_access_key_id=self.access_key, aws_secret_access_key=self.secret_key)
 
-    def upload(self):
+    def upload(self) -> str:
         """
         Upload the file to the S3 bucket.
 

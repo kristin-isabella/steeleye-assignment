@@ -7,13 +7,13 @@ from lambda_handler import lambda_handler
 logging.basicConfig(level=logging.INFO)
 
 
-def run(url: str):
+def run(url: str) -> None:
     # Define input parameters for the lambda_handler function
     event = {'url': url}
     # Define the file type to download
     event = json.dumps(event)
     # Call the lambda_handler function
-    response = lambda_handler(event=event, context=None)
+    lambda_handler(event=event)
 
 
 if __name__ == "__main__":
